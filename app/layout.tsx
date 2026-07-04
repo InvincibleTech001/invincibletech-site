@@ -1,21 +1,31 @@
-import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
+import { Geist } from "next/font/google";
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
-  title: "InvincibleTech",
-  description: "Software Engineering, Data Intelligence & AI Solutions",
+  title: {
+    default: "InvincibleTech",
+    template: "%s | InvincibleTech",
+  },
+
+  description:
+    "Software Engineering, Data Intelligence, Artificial Intelligence, Automation and Digital Solutions.",
+
+  keywords: [
+    "Software Development",
+    "Data Analytics",
+    "Artificial Intelligence",
+    "Automation",
+    "Power BI",
+    "Python",
+    "Next.js",
+    "React",
+    "InvincibleTech",
+  ],
 };
 
 export default function RootLayout({
@@ -25,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable}`}>
+      <body className={geist.className}>
         {children}
       </body>
     </html>
