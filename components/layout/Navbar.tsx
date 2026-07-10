@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
@@ -17,12 +18,12 @@ export default function Navbar() {
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <img
+          <Image
             src="/logos/shield.png"
             alt="InvincibleTech Logo"
             width={50}
             height={50}
-            className="h-12 w-12 object-contain"
+            priority
           />
 
           <div className="leading-tight">

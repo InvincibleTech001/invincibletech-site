@@ -1,10 +1,19 @@
 import Hero from "@/components/home/Hero";
 import Navbar from "@/components/layout/Navbar";
 import Container from "@/components/shared/Container";
+import TechRibbon from "@/components/sections/TechRibbon";
 
 export default function Home() {
   return (
     <>
+    <>
+  <Navbar />
+
+  <main>
+    <Hero />
+    <TechRibbon />
+  </main>
+</>
       <Navbar />
 
       <main>
