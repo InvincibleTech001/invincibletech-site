@@ -1,23 +1,27 @@
+import Link from "next/link";
+
 interface ButtonProps {
+  href: string;
   children: React.ReactNode;
   variant?: "primary" | "secondary";
 }
 
 export default function Button({
+  href,
   children,
   variant = "primary",
 }: ButtonProps) {
-  const base =
-    "rounded-xl px-6 py-3 font-semibold transition-all duration-300";
-
   const styles =
     variant === "primary"
-      ? "bg-teal-500 text-white hover:bg-teal-400 hover:scale-105 hover:shadow-lg hover:shadow-teal-500/20"
-      : "border border-slate-700 text-slate-300 hover:border-teal-500 hover:text-white";
+      ? "bg-teal-500 hover:bg-teal-400 text-white shadow-lg shadow-teal-500/20"
+      : "border border-slate-700 hover:border-teal-500 text-slate-300 hover:text-white";
 
   return (
-    <button className={`${base} ${styles}`}>
+    <Link
+      href={href}
+      className={`inline-flex items-center justify-center rounded-xl px-7 py-4 font-semibold transition-all duration-300 hover:scale-105 ${styles}`}
+    >
       {children}
-    </button>
+    </Link>
   );
 }

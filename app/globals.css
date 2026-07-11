@@ -75,3 +75,16 @@ a{
 transition:.3s;
 
 }
+body {
+  background: radial-gradient(
+      circle at top,
+      rgba(20, 184, 166, 0.08),
+      transparent 40%
+    ),
+    #020617;
+}
+
+::selection {
+  background: #14b8a6;
+  color: white;
+}
