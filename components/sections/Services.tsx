@@ -4,25 +4,32 @@ import { services } from "@/data/services";
 
 export default function Services() {
   return (
-    <section className="py-28">
+    <section className="relative py-32">
+
       <Container>
-        <div className="text-center max-w-3xl mx-auto">
-          <span className="text-teal-400 font-semibold tracking-widest uppercase">
-            Our Solutions
+
+        <div className="mx-auto max-w-3xl text-center">
+
+          <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">
+            Our Expertise
           </span>
 
-          <h2 className="mt-4 text-5xl font-bold text-white">
-            Technology That Solves Real Problems
+          <h2 className="mt-6 text-5xl font-black text-white md:text-6xl">
+            Technology That
+            <span className="block bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+              Drives Innovation
+            </span>
           </h2>
 
-          <p className="mt-6 text-xl text-slate-400 leading-8">
-            From intelligent software to data-driven decision making,
-            InvincibleTech delivers modern digital solutions tailored to
-            businesses, institutions, researchers and organizations.
+          <p className="mx-auto mt-8 max-w-2xl text-xl leading-9 text-slate-400">
+            We engineer intelligent software, automation platforms,
+            analytics solutions, and scalable digital systems that help
+            organizations innovate, optimize, and grow.
           </p>
+
         </div>
 
-        <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-24 grid gap-8 lg:grid-cols-2">
           {services.map((service) => (
             <ServiceCard
               key={service.title}
@@ -32,7 +39,9 @@ export default function Services() {
             />
           ))}
         </div>
+
       </Container>
+
     </section>
   );
 }

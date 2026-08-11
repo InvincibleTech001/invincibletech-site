@@ -2,9 +2,21 @@ interface BadgeProps {
   children: React.ReactNode;
 }
 
-export default function Badge({ children }: BadgeProps) {
+export function Badge({ children }: BadgeProps) {
   return (
-    <span className="inline-flex items-center rounded-full border border-teal-500/30 bg-teal-500/10 px-4 py-2 text-sm font-medium text-teal-400">
+    <span
+      className="
+      rounded-full
+      border
+      border-cyan-500/20
+      bg-cyan-500/10
+      px-3
+      py-1
+      text-xs
+      font-medium
+      text-cyan-300
+    "
+    >
       {children}
     </span>
   );

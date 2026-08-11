@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LucideIcon } from "lucide-react";
+import { LucideIcon, ArrowRight } from "lucide-react";
 
 interface ServiceCardProps {
   title: string;
@@ -13,23 +13,59 @@ export default function ServiceCard({
   icon: Icon,
 }: ServiceCardProps) {
   return (
-    <div className="group rounded-2xl border border-slate-800 bg-slate-900/40 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-teal-500/50 hover:shadow-xl hover:shadow-teal-500/10">
-      <Icon className="h-12 w-12 text-teal-400 transition-transform duration-300 group-hover:scale-110" />
+    <div className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/50 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-cyan-400/40 hover:shadow-[0_20px_60px_rgba(6,182,212,0.15)]">
 
-      <h3 className="mt-6 text-2xl font-bold text-white">
-        {title}
-      </h3>
+      {/* Gradient Glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-transparent to-emerald-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-      <p className="mt-4 leading-7 text-slate-400">
-        {description}
-      </p>
+      {/* Top Accent */}
+      <div className="absolute left-0 top-0 h-1 w-full scale-x-0 bg-gradient-to-r from-cyan-400 to-emerald-400 transition-transform duration-500 group-hover:scale-x-100" />
 
-      <Link
-        href="/solutions"
-        className="mt-6 inline-block font-semibold text-teal-400 hover:text-teal-300"
-      >
-        Learn More →
-      </Link>
+      <div className="relative z-10">
+
+        {/* Icon */}
+        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+          <Icon className="h-8 w-8 text-cyan-400" />
+        </div>
+
+        {/* Title */}
+        <h3 className="mt-8 text-2xl font-bold text-white">
+          {title}
+        </h3>
+
+        {/* Description */}
+        <p className="mt-5 leading-8 text-slate-400">
+          {description}
+        </p>
+
+        {/* Technology Tags */}
+        <div className="mt-8 flex flex-wrap gap-2">
+
+          <span className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
+            Modern Stack
+          </span>
+
+          <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
+            Scalable
+          </span>
+
+          <span className="rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-300">
+            Secure
+          </span>
+
+        </div>
+
+        {/* CTA */}
+        <Link
+          href="/solutions"
+          className="mt-8 inline-flex items-center gap-2 font-semibold text-cyan-400 transition-all duration-300 group-hover:gap-4 group-hover:text-cyan-300"
+        >
+          Learn More
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+
+      </div>
+
     </div>
   );
 }
